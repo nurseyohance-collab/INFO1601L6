@@ -1,160 +1,170 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+<script>
+   function alertFun(){
+    alert("Hello !");
+   }
 
-# C extensions
-*.so
+   function confirmFun(){
+     let didConfirm = confirm("Are you sure about that?");
+     if(didConfirm){
+       alert("You confirmed :)");
+     }else{
+      alert("You did not confirm :(");
+     }
+   }
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+   function promptFun(){
+    let val = prompt("What is your name?");
+    alert(`You've entered: ${val}`);
+   }
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
-.pdm.toml
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+  </script> you can uncomment the following to ignore the entire idea folder.
 #.idea/
+//get client data using navigator
+console.log(window.navigator.cookieEnabled);
+console.log(window.navigator.onLine);
+console.log(navigator.appVersion);
+console.log(navigator.userAgent)
+console.log(navigator.platform);
+
+//get window metadata using window
+console.log(window.location.href);//get full url
+console.log(window.location.protocol);
+console.log(window.location.hostname);
+
+function redirect(url){
+  window.location.assign(url);//redirects the page to another url
+}
+
+window.onload = function(event){
+   console.log("Page has loaded");
+   //do other javascript stuff here
+}
+//Global variables declared with var are automatically added to the window object
+var bob = 'bob';
+const sally = 'sally';
+    
+console.log(window.bob === bob);//true
+console.log(window.sally === sally);//false
+
+var document = 'hello this is my variable';
+console.log(document);//give the DOM object instead 
+console.log(window.document === document)//true because declaration ignored
+...
+   <script src="A.js"></script>
+   <script src="B.js"></script>
+</body>
+const result = document.querySelector('#result');
+result.innerHTML = '<h2>My Span</h2>';
+result.style.color = 'blue';
+<input id="myBtn" type="button" onclick="myFun()" value="click me"/>
+
+<script>
+  function myFun(){
+    alert("hello");  
+  }
+
+  function myFun2(){
+    console.log("myFun2 called");
+  }
+
+ //receives the event parameter from addEventListener high order function
+  function logEventType(event){
+    console.log(event.type);
+  }
+
+  let myBtn = document.querySelector("#myBtn");
+
+  //attach myFun2 in addition to myFun to the click event of myBtn
+  myBtn.addEventListener("click", myFun2);
+
+  //There are other events such as mouseover and mouseout
+  
+  //Any callback passed to addeventListener receives an event object
+  myBtn.addEventListener("mouseover", logEventType);//logs 'mouseover'
+  myBtn.addEventListener("mouseout", logEventType);// logs 'mouseout'
+ //these events will fire when the mouse pointer hovers/passes over the button
+</script>
+let obj2 = myobj;
+
+//obj2 and myobj are the same variable
+
+obj2.name = "Shelly";
+
+console.log(myobj.name);//Shelly
+
+//if you need to create a new object and copy its values use Object.assign
+
+let obj3 = {};
+Object.assign(obj3, myobj);
+
+obj3.name = 'Smith';
+
+console.log(myobj.name, obj3.name);//Shelly, Smith
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav>
+        <div class="nav-wrapper teal" style="padding-left: 10px;">
+           <a href="#!" class="brand-logo">Ajax Demo</a>
+        </div>
+    </nav>
+    <main class="row" style="padding: 40px">
+         <table>
+           <thead>
+                <tr>
+                   <th>#</th>
+                   <th>name</th>
+                   <th>Type</th>
+                   <th>website</th>
+                </tr>
+                </thead>
+                  <tbody id="result">
+                                                
+                  </tbody>
+           </table>
+     </main>
+     <script>
+     </script>
+  </body>
+</html>
+function drawTable(records){
+    let result = document.querySelector('#result');
+    //add html code inside of result
+    let html = '';// create html string
+    for(let record of records){
+        //build html string
+        html += `<tr>
+          <td>${record.id}</td>
+          <td>${record.name}</td>
+          <td>${record.brewery_type}</td>
+          <td>${record.website_url}</td>    
+        </tr>`;
+    }
+    result.innerHTML = html;//add html string to DOM
+}
+
+//testing the function
+drawTable([{
+   id: 1,
+   name: "bob's",
+   brewery_type: "fire",
+   website_url:"https://bobs.com"
+}]);
+//function MUST be declared async
+async function getData(url){
+   try{
+     let response = await fetch(url);//1. Send http request and get response
+     let result = await response.json();//2. Get data from response
+     drawTable(result);// 3. Do something with the data
+  }catch(e){
+      console.log(e);//catch and log any errors
+  }
+}
+getData("https://api.openbrewerydb.org/breweries/search?query=harry")
